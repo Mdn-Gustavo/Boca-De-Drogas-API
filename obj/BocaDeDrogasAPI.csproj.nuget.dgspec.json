@@ -1,26 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "/home/funes/Documentos/C#proj/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj": {}
+    "/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj": {}
   },
   "projects": {
-    "/home/funes/Documentos/C#proj/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj": {
+    "/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/funes/Documentos/C#proj/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj",
+        "projectUniqueName": "/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj",
         "projectName": "BocaDeDrogasAPI",
-        "projectPath": "/home/funes/Documentos/C#proj/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj",
-        "packagesPath": "/home/funes/.nuget/packages/",
-        "outputPath": "/home/funes/Documentos/C#proj/BocaDeDrogasAPI/obj/",
+        "projectPath": "/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj",
+        "packagesPath": "/home/holy/.nuget/packages/",
+        "outputPath": "/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/funes/.nuget/NuGet/NuGet.Config"
+          "/home/holy/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "/usr/lib64/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,6 +58,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[10.0.9, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[10.2.1, )"
             }
           },
           "imports": [
@@ -79,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.108/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.106/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
