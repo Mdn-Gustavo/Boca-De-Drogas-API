@@ -1,0 +1,6 @@
+@BocaDeDrogasAPI_HotAddress = http://localhost:8000
+
+GET {{BocaDeDrogasAPI_HotAddress}}/weatherforecast/
+Accept: application.json
+
+###

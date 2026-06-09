@@ -1,0 +1,14 @@
+/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.csproj.AssemblyReference.cache
+/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/obj/Debug/net10.0/rpswa.dswa.cache.json
+/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.GeneratedMSBuildEditorConfig.editorconfig
+/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.AssemblyInfoInputs.cache
+/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.AssemblyInfo.cs
+/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.csproj.CoreCompileInputs.cache
+/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.MvcApplicationPartsAssemblyInfo.cache
+/home/funes/Documentos/C#proj/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.csproj.AssemblyReference.cache
+/home/funes/Documentos/C#proj/BocaDeDrogasAPI/obj/Debug/net10.0/rpswa.dswa.cache.json
+/home/funes/Documentos/C#proj/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.GeneratedMSBuildEditorConfig.editorconfig
+/home/funes/Documentos/C#proj/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.AssemblyInfoInputs.cache
+/home/funes/Documentos/C#proj/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.AssemblyInfo.cs
+/home/funes/Documentos/C#proj/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.csproj.CoreCompileInputs.cache
+/home/funes/Documentos/C#proj/BocaDeDrogasAPI/obj/Debug/net10.0/BocaDeDrogasAPI.MvcApplicationPartsAssemblyInfo.cache
