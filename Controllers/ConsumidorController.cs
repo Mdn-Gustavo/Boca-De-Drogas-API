@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using BocaDeDrogasAPI.Models;
 using BocaDeDrogasAPI.Data;
-using Microsoft.AspNetCore.Mvc;
 
 namespace BocaDeDrogasAPI.Controllers;
 
@@ -20,31 +20,43 @@ public class ConsumidorController : ControllerBase
         _AppDbContext = appDbContext;
     }
 
-    // GET: api/consumidor
-    [HttpGet]
-    public ActionResult<IEnumerable<Consumidor>> GetConsumidores()
+    [HttpPost]
+    public async Task<IActionResult> AddConsumidor(Consumidor consumidor)
     {
-        return _AppDbContext.Consumidores.ToList();
+        _AppDbContext.CUSTOMERS.Add(consumidor);
+        await _AppDbContext.SaveChangesAsync();
+        return Ok(consumidor);
     }
 
-    // GET: api/consumidor/{id}
-    [HttpGet("{id}")]
-    public ActionResult<Consumidor> GetConsumidor(int id)
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Consumidor>>> GetConsumidores()
     {
-        var consumidor = _AppDbContext.Consumidores.Find(id);
+        var consumidores = await _AppDbContext.CUSTOMERS.ToListAsync();
+        return Ok(consumidores);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Consumidor>> GetConsumidorById(int id)
+    {
+        var consumidor = await _AppDbContext.CUSTOMERS.FindAsync(id);
         if (consumidor == null)
         {
-            return NotFound();
+            return NotFound("Consumidor não encontrado!");
         }
-        return consumidor;
+        return Ok(consumidor);
     }
 
-    // POST: api/consumidor
-    [HttpPost]
-    public ActionResult<Consumidor> CreateConsumidor(Consumidor consumidor)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateConsumidor(int id, [FromBody] Consumidor ConsumidorAtualizado)
     {
-        _AppDbContext.Consumidores.Add(consumidor);
-        _AppDbContext.SaveChanges();
-        return CreatedAtAction(nameof(GetConsumidor), new { id = consumidor.Id }, consumidor);
+        var consumidorExistente = await _AppDbContext.CUSTOMERS.FindAsync(id);
+        if (consumidorExistente == null)
+        {
+            return NotFound("Consumidor não encontrado!");
+        }
+
+        _AppDbContext.Entry(consumidorExistente).CurrentValues.SetValues(ConsumidorAtualizado);
+        await _AppDbContext.SaveChangesAsync();
+        return StatusCode(201, consumidorExistente);
     }
 }

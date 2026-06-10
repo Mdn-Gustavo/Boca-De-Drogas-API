@@ -1,26 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj": {}
+    "/home/funes/Boca-De-Drogas-API/BocaDeDrogasAPI.csproj": {}
   },
   "projects": {
-    "/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj": {
+    "/home/funes/Boca-De-Drogas-API/BocaDeDrogasAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj",
+        "projectUniqueName": "/home/funes/Boca-De-Drogas-API/BocaDeDrogasAPI.csproj",
         "projectName": "BocaDeDrogasAPI",
-        "projectPath": "/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/BocaDeDrogasAPI.csproj",
-        "packagesPath": "/home/holy/.nuget/packages/",
-        "outputPath": "/home/holy/Documents/C#/Projects/BocaDeDrogasAPI/obj/",
+        "projectPath": "/home/funes/Boca-De-Drogas-API/BocaDeDrogasAPI.csproj",
+        "packagesPath": "/home/funes/.nuget/packages/",
+        "outputPath": "/home/funes/Boca-De-Drogas-API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/holy/.nuget/NuGet/NuGet.Config"
+          "/home/funes/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "/usr/lib64/dotnet/library-packs": {},
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.106/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/10.0.108/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
