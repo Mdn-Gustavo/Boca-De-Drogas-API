@@ -10,7 +10,7 @@ public class AppDbContext : DbContext
 
     public DbSet<Consumidor> CUSTOMERS { get; set;}
 
-    public DbSet<Droga> Drogas => Set<Droga>();
+    public DbSet<Droga> DRUGS { get; set;}
 
-    public DbSet<Venda> Vendas => Set<Venda>();
+    public DbSet<Venda> SELLS => Set<Venda>();
 }

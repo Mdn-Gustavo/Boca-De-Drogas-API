@@ -59,4 +59,19 @@ public class ConsumidorController : ControllerBase
         await _AppDbContext.SaveChangesAsync();
         return StatusCode(201, consumidorExistente);
     }
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteConsumidor(int id)
+    {
+        var consumidor = await _AppDbContext.CUSTOMERS.FindAsync(id);
+        if (consumidor == null)
+        {
+            return NotFound("Consumidor não encontrado!");
+        }
+
+        _AppDbContext.CUSTOMERS.Remove(consumidor);
+
+        await _AppDbContext.SaveChangesAsync();
+
+        return Ok("personagem deletado com sucesso!");
+    }
 }
