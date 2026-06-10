@@ -10,6 +10,7 @@ namespace BocaDeDrogasAPI.Controllers;
 public class VendaController : ControllerBase
 {
     private readonly AppDbContext _AppDbContext;
+
     public VendaController(AppDbContext appDbContext)
     {
         _AppDbContext = appDbContext;
@@ -23,22 +24,25 @@ public class VendaController : ControllerBase
         {
             return NotFound("Droga não encontrada!");
         }
+
         var consumidor = await _AppDbContext.CUSTOMERS.FindAsync(venda.ConsumidorId);
         if (consumidor == null)
         {
             return NotFound("Consumidor não encontrado!");
         }
+
         if (droga.Estoque < venda.Quantidade)
         {
             return BadRequest("Quantidade insuficiente em estoque! Disponível: " + droga.Estoque);
         }
-            venda.ValorTotal = droga.Preco * venda.Quantidade;
-            droga.Estoque -= venda.Quantidade;
-            consumidor.Divida += venda.ValorTotal;
 
-            _AppDbContext.SELLS.Add(venda);
-            await _AppDbContext.SaveChangesAsync();
-        
+        venda.ValorTotal = droga.Preco * venda.Quantidade;
+        droga.Estoque -= venda.Quantidade;
+        consumidor.Divida += venda.ValorTotal;
+
+        _AppDbContext.SELLS.Add(venda);
+        await _AppDbContext.SaveChangesAsync();
+
         return Ok("Venda realizada com sucesso!");
     }
 
@@ -49,7 +53,7 @@ public class VendaController : ControllerBase
             .Include(v => v.Consumidor)
             .Include(v => v.Droga)
             .ToList();
-        
+
         return Ok(vendas);
     }
 
@@ -65,8 +69,37 @@ public class VendaController : ControllerBase
         {
             return NotFound("Registro não encontrado!");
         }
-        
+
         return Ok(venda);
     }
-    
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateVenda(int id, [FromBody] Venda vendaAtualizada)
+    {
+        var vendaExistente = await _AppDbContext.SELLS.FindAsync(id);
+        if (vendaExistente == null)
+        {
+            return NotFound("Venda não encontrada!");
+        }
+
+        _AppDbContext.Entry(vendaExistente).CurrentValues.SetValues(vendaAtualizada);
+        await _AppDbContext.SaveChangesAsync();
+        return StatusCode(201, vendaExistente);
+
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteById(int id)
+    {
+        var venda = _AppDbContext.SELLS.Find(id);
+
+        if (venda == null)
+        {
+            return NotFound("Venda não encontrada!");
+        }
+
+        _AppDbContext.SELLS.Remove(venda);
+        _AppDbContext.SaveChanges();
+        return NoContent();
+    }
 }
