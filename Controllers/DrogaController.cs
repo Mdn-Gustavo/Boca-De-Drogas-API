@@ -55,4 +55,19 @@ public class DrogaController : ControllerBase
           await _AppDbContext.SaveChangesAsync();
           return StatusCode(201, drugsExistente);
      }
+
+     [HttpDelete("{id}")]
+     public IActionResult DeleteDroga(int id)
+     {
+          var droga = _AppDbContext.Drogas.Find(id);
+
+          if (droga == null)
+          {
+               return NotFound("Droga não encontrada!");
+          }
+
+          _AppDbContext.Drogas.Remove(droga);
+          _AppDbContext.SaveChanges();
+          return NoContent();
+     }
 }
