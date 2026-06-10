@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BocaDeDrogasAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df12f74b63414a67b5d0f9cf41456852bd39826b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fa4fd0f7ca89461c5ece83b3391e0e2b0ef9dfe")]
 [assembly: System.Reflection.AssemblyProductAttribute("BocaDeDrogasAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BocaDeDrogasAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
