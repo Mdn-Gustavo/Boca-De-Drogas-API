@@ -11,7 +11,7 @@ namespace BocaDeDrogasAPI.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Consumidores",
+                name: "CUSTOMERS",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -21,11 +21,11 @@ namespace BocaDeDrogasAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Consumidores", x => x.Id);
+                    table.PrimaryKey("PK_CUSTOMERS", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Drogas",
+                name: "DRUGS",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -36,11 +36,11 @@ namespace BocaDeDrogasAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Drogas", x => x.Id);
+                    table.PrimaryKey("PK_DRUGS", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Vendas",
+                name: "SELLS",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -52,29 +52,29 @@ namespace BocaDeDrogasAPI.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vendas", x => x.Id);
+                    table.PrimaryKey("PK_SELLS", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Vendas_Consumidores_ConsumidorId",
+                        name: "FK_SELLS_CUSTOMERS_ConsumidorId",
                         column: x => x.ConsumidorId,
-                        principalTable: "Consumidores",
+                        principalTable: "CUSTOMERS",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Vendas_Drogas_DrogaId",
+                        name: "FK_SELLS_DRUGS_DrogaId",
                         column: x => x.DrogaId,
-                        principalTable: "Drogas",
+                        principalTable: "DRUGS",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vendas_ConsumidorId",
-                table: "Vendas",
+                name: "IX_SELLS_ConsumidorId",
+                table: "SELLS",
                 column: "ConsumidorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vendas_DrogaId",
-                table: "Vendas",
+                name: "IX_SELLS_DrogaId",
+                table: "SELLS",
                 column: "DrogaId");
         }
 
@@ -82,13 +82,13 @@ namespace BocaDeDrogasAPI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Vendas");
+                name: "SELLS");
 
             migrationBuilder.DropTable(
-                name: "Consumidores");
+                name: "CUSTOMERS");
 
             migrationBuilder.DropTable(
-                name: "Drogas");
+                name: "DRUGS");
         }
     }
 }

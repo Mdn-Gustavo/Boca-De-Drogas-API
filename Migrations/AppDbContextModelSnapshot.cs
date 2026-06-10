@@ -31,7 +31,7 @@ namespace BocaDeDrogasAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Consumidores");
+                    b.ToTable("CUSTOMERS");
                 });
 
             modelBuilder.Entity("BocaDeDrogasAPI.Models.Droga", b =>
@@ -52,7 +52,7 @@ namespace BocaDeDrogasAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Drogas");
+                    b.ToTable("DRUGS");
                 });
 
             modelBuilder.Entity("BocaDeDrogasAPI.Models.Venda", b =>
@@ -79,7 +79,7 @@ namespace BocaDeDrogasAPI.Migrations
 
                     b.HasIndex("DrogaId");
 
-                    b.ToTable("Vendas");
+                    b.ToTable("SELLS");
                 });
 
             modelBuilder.Entity("BocaDeDrogasAPI.Models.Venda", b =>

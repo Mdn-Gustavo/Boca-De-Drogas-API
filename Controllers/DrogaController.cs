@@ -19,7 +19,7 @@ public class DrogaController : ControllerBase
      [HttpPost]
      public async Task<IActionResult> AddDroga(Droga drugs )
      {
-          _AppDbContext.Drogas.Add(drugs);
+          _AppDbContext.DRUGS.Add(drugs);
           await  _AppDbContext.SaveChangesAsync();
           return Ok(drugs);
      }
@@ -27,14 +27,14 @@ public class DrogaController : ControllerBase
      [HttpGet]
      public async Task<ActionResult<IEnumerable<Droga>>> GetDrogas()
      {
-          var drugs = await _AppDbContext.Drogas.ToListAsync();
+          var drugs = await _AppDbContext.DRUGS.ToListAsync();
           return Ok(drugs);
      }
 
      [HttpGet("{id}")]
      public async Task<ActionResult<Droga>> GetDrogaById(int id)
      {
-          var drugs = await _AppDbContext.Drogas.FindAsync(id);
+          var drugs = await _AppDbContext.DRUGS.FindAsync(id);
           if (drugs == null)
           {
                return NotFound("Droga não encontrada!");
@@ -45,7 +45,7 @@ public class DrogaController : ControllerBase
      [HttpPut("{id}")]
      public async Task<IActionResult> UpdateDroga(int id, [FromBody] Droga drugsatualizada)
      {
-          var drugsExistente = await _AppDbContext.Drogas.FindAsync(id);
+          var drugsExistente = await _AppDbContext.DRUGS.FindAsync(id);
           if (drugsExistente == null)
           {
                return NotFound("Droga não encontrada!");
@@ -59,14 +59,14 @@ public class DrogaController : ControllerBase
      [HttpDelete("{id}")]
      public IActionResult DeleteDroga(int id)
      {
-          var droga = _AppDbContext.Drogas.Find(id);
+          var droga = _AppDbContext.DRUGS.Find(id);
 
           if (droga == null)
           {
                return NotFound("Droga não encontrada!");
           }
 
-          _AppDbContext.Drogas.Remove(droga);
+          _AppDbContext.DRUGS.Remove(droga);
           _AppDbContext.SaveChanges();
           return NoContent();
      }
