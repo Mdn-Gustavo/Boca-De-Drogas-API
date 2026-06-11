@@ -63,7 +63,7 @@ public class VendaController : ControllerBase
         var venda = _AppDbContext.SELLS
             .Include(v => v.Droga)
             .Include(v => v.Consumidor)
-            .FirstOrDefault(v => v.Id == id);
+            .FirstOrDefaultAsync(v => v.Id == id);
 
         if (venda == null)
         {
