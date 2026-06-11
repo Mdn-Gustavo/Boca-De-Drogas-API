@@ -161,3 +161,6 @@ Product (1)
 
 This project was created to practice backend development with ASP.NET Core and Entity Framework Core while implementing real-world business logic and database relationships.
 
+## Team
+
+Gustavo Medina, Henrique Funes, Pedro Tomazi, Tales Mácola.
