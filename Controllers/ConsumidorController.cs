@@ -25,7 +25,7 @@ public class ConsumidorController : ControllerBase
     {
         _AppDbContext.CUSTOMERS.Add(consumidor);
         await _AppDbContext.SaveChangesAsync();
-        return Ok(consumidor);
+        return CreatedAtAction(nameof (GetConsumidorById), new { id = consumidor.Id}, consumidor);
     }
 
     [HttpGet]
@@ -57,7 +57,7 @@ public class ConsumidorController : ControllerBase
 
         _AppDbContext.Entry(consumidorExistente).CurrentValues.SetValues(ConsumidorAtualizado);
         await _AppDbContext.SaveChangesAsync();
-        return StatusCode(201, consumidorExistente);
+        return Ok(consumidorExistente);
     }
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteConsumidor(int id)
