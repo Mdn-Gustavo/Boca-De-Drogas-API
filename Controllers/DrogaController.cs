@@ -53,11 +53,11 @@ public class DrogaController : ControllerBase
           
           _AppDbContext.Entry(drugsExistente).CurrentValues.SetValues(drugsatualizada);
           await _AppDbContext.SaveChangesAsync();
-          return StatusCode(201, drugsExistente);
+          return Ok(drugsExistente);
      }
 
      [HttpDelete("{id}")]
-     public IActionResult DeleteDroga(int id)
+     public async Task<IActionResult> DeleteDroga(int id)
      {
           var droga = _AppDbContext.DRUGS.Find(id);
 
